@@ -17,4 +17,4 @@
 [![Build Status](https://travis-ci.com/alejandrorsanchez/main.svg?branch=master)](https://travis-ci.com/alejandrorsanchez/main)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops-Alejandro-Rodriguez&metric=alert_status)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops-Alejandro-Rodriguez)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops-Alejandro-Rodriguez&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops-Alejandro-Rodriguez)
-
+[![BCH compliance](https://bettercodehub.com/edge/badge/alejandrorsanchez/main?branch=master)](https://bettercodehub.com/)
