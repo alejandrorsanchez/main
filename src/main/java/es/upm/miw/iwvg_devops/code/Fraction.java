@@ -66,4 +66,32 @@ public class Fraction {
                 ", denominator=" + denominator +
                 '}';
     }
+
+    public boolean isProper(Fraction fraction) {
+        return (fraction.getNumerator() < fraction.getDenominator());
+    }
+
+    public boolean isNoProper(Fraction fraction) {
+        return (fraction.getNumerator() > fraction.getDenominator());
+    }
+
+    public boolean isEquivalent(Fraction fraction) {
+        return (this.getNumerator()*fraction.getDenominator() == this.getDenominator()*fraction.getNumerator());
+    }
+
+    public Fraction add(Fraction fraction) {
+        Fraction result = new Fraction();
+        result.setDenominator(this.getDenominator()*fraction.getDenominator());
+        result.setNumerator((this.getNumerator()*fraction.getDenominator())+(this.getDenominator()*fraction.getNumerator()));
+        return result;
+    }
+
+    public Fraction multiply(Fraction fraction) {
+        return new Fraction((this.getNumerator()*fraction.getNumerator()),(this.getDenominator()*fraction.getDenominator()));
+    }
+
+    public Fraction divide(Fraction fraction) {
+        return new Fraction((this.getNumerator()*fraction.getDenominator()),(this.getDenominator()*fraction.getNumerator()));
+    }
+
 }
