@@ -57,6 +57,4 @@ class UserTest {
         assertEquals( "A.", user.initials());
     }
 
-
-
 }
