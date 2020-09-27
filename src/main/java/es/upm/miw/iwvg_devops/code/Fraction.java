@@ -108,7 +108,8 @@ public class Fraction {
                 .filter(user -> name.equals(user.getName()))
                 .flatMap(user -> user.getFractions().stream())
                 .findFirst()
-                .get().decimal();
+                .map(Fraction::decimal)
+                .get();
     }
 
     public Stream findUserFamilyNameByAllNegativeSignFractionDistinct(){

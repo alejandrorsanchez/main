@@ -43,6 +43,16 @@ public class FractionTest {
     }
 
     @Test
+    void testToString() {
+        Fraction f1 = new Fraction(2, 3);
+        String message = "Fraction{" +
+                "numerator=" + f1.getNumerator() +
+                ", denominator=" + f1.getDenominator() +
+                '}';
+        assertEquals(f1.toString(), message);
+    }
+
+    @Test
     void testDecimal() {
         assertEquals(0.42857142857142855, fraction.decimal());
     }
