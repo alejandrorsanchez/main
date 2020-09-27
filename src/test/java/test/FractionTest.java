@@ -7,9 +7,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FractionTest {
 
@@ -62,6 +63,16 @@ public class FractionTest {
     }
 
     @Test
+    void testIsNegative() {
+        Fraction f1 = new Fraction(1, -2);
+        Fraction f2 = new Fraction(-2, 4);
+        Fraction f3 = new Fraction(2, 4);
+        assertTrue(f1.isNegative());
+        assertTrue(f2.isNegative());
+        assertFalse(f3.isNegative());
+        }
+
+    @Test
     void testIsEquivalent() {
         Fraction f1 = new Fraction(1, 2);
         Fraction f2 = new Fraction(2, 4);
@@ -91,5 +102,7 @@ public class FractionTest {
         assertEquals(9, f1.divide(f2).getNumerator());
         assertEquals(4, f1.divide(f2).getDenominator());
     }
+
+
 
 }
