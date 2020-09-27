@@ -1,11 +1,5 @@
 package es.upm.miw.iwvg_devops.code;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
  * <p>
@@ -99,11 +93,5 @@ public class Fraction {
     public Fraction divide(Fraction fraction) {
         return new Fraction((this.getNumerator()*fraction.getDenominator()),(this.getDenominator()*fraction.getNumerator()));
     }
-
-    public boolean isNegative() {
-        return (this.getNumerator() < 0) || (this.getDenominator() < 0);
-    }
-
-
 
 }
