@@ -4,9 +4,6 @@ import es.upm.miw.iwvg_devops.code.Fraction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -91,5 +88,11 @@ public class FractionTest {
         assertEquals(4, f1.divide(f2).getDenominator());
     }
 
+    @Test
+    void testFindFractionAdition() {
+        Fraction f = new Fraction(3, 1);
+        assertEquals(f.getNumerator(), new Fraction().findFractionAdditionByUserId("1").getNumerator());
+        assertEquals(f.getDenominator(), new Fraction().findFractionAdditionByUserId("1").getDenominator());
+    }
 
 }
