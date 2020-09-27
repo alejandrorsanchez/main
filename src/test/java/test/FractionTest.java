@@ -124,4 +124,9 @@ public class FractionTest {
                 .collect(Collectors.toList()));
     }
 
+    @Test
+    void testFindImproperFraction() {
+        assertEquals(List.of("Fernandez", "Blanco", "López", "Blanco", "Torres"), new Fraction().findUserFamilyNameByImproperFraction()
+                .collect(Collectors.toList()));
+    }
 }

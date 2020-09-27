@@ -123,4 +123,10 @@ public class Fraction {
         return (this.getNumerator() < 0 || this.getDenominator() < 0);
     }
 
+    public Stream findUserFamilyNameByImproperFraction() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(fraction -> isNoProper(fraction)))
+                .map(User::getFamilyName);
+    }
 }
