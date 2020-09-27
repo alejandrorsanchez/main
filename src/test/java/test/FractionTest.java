@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -104,5 +105,10 @@ public class FractionTest {
         assertEquals(0, new Fraction().findFirstDecimalFractionByUserName("Antonio"));
     }
 
+    @Test
+    void testFindNegativeFraction() {
+        assertEquals(List.of("Blanco","López", "Blanco"), new Fraction().findUserFamilyNameByAllNegativeSignFractionDistinct()
+                .collect(Collectors.toList()));
+    }
 
 }
