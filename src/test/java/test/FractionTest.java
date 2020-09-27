@@ -92,5 +92,11 @@ public class FractionTest {
         assertEquals(4, f1.divide(f2).getDenominator());
     }
 
+    @Test
+    void testFindFractionAdition() {
+        Fraction f = new Fraction(3, 1);
+        assertEquals(f.getNumerator(), new Fraction().findFractionAdditionByUserId("1").getNumerator());
+        assertEquals(f.getDenominator(), new Fraction().findFractionAdditionByUserId("1").getDenominator());
+    }
 
 }

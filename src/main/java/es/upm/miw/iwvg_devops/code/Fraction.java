@@ -94,4 +94,11 @@ public class Fraction {
         return new Fraction((this.getNumerator()*fraction.getDenominator()),(this.getDenominator()*fraction.getNumerator()));
     }
 
+    public Fraction findFractionAdditionByUserId(String id){
+        return new UsersDatabase().findAll()
+                .filter(user -> id.equals(user.getId()))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(new Fraction(0, 1), (acumulator, element) -> acumulator.add(element));
+    }
+
 }
