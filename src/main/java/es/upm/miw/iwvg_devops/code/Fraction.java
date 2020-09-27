@@ -1,5 +1,7 @@
 package es.upm.miw.iwvg_devops.code;
 
+import java.util.stream.Stream;
+
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
  * <p>
@@ -107,6 +109,18 @@ public class Fraction {
                 .flatMap(user -> user.getFractions().stream())
                 .findFirst()
                 .get().decimal();
+    }
+
+    public Stream findUserFamilyNameByAllNegativeSignFractionDistinct(){
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(fraction -> fraction.isNegative()))
+                .distinct()
+                .map(User::getFamilyName);
+    }
+
+    private boolean isNegative() {
+        return (this.getNumerator() < 0 || this.getDenominator() < 0);
     }
 
 }

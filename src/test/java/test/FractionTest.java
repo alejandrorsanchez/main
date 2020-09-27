@@ -4,6 +4,9 @@ import es.upm.miw.iwvg_devops.code.Fraction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -19,8 +22,8 @@ public class FractionTest {
     @Test
     void testNewFraction() {
         Fraction f1 = new Fraction();
-        assertEquals( 1, f1.getNumerator());
-        assertEquals( 1, f1.getDenominator());
+        assertEquals(1, f1.getNumerator());
+        assertEquals(1, f1.getDenominator());
     }
 
     @Test
@@ -98,6 +101,12 @@ public class FractionTest {
     @Test
     void testFindFirstDecimal() {
         assertEquals(0, new Fraction().findFirstDecimalFractionByUserName("Antonio"));
+    }
+
+    @Test
+    void testFindNegativeFraction() {
+        assertEquals(List.of("Blanco", "López", "Blanco"), new Fraction().findUserFamilyNameByAllNegativeSignFractionDistinct()
+                .collect(Collectors.toList()));
     }
 
 }
