@@ -99,4 +99,6 @@ public class FractionTest {
         assertEquals(f.getDenominator(), new Fraction().findFractionAdditionByUserId("1").getDenominator());
     }
 
+
+
 }
