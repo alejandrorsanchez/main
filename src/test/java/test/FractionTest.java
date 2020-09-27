@@ -99,6 +99,10 @@ public class FractionTest {
         assertEquals(f.getDenominator(), new Fraction().findFractionAdditionByUserId("1").getDenominator());
     }
 
+    @Test
+    void testFindFirstDecimal() {
+        assertEquals(0, new Fraction().findFirstDecimalFractionByUserName("Antonio"));
+    }
 
 
 }
