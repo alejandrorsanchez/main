@@ -92,4 +92,5 @@ public class FractionTest {
         assertEquals(4, f1.divide(f2).getDenominator());
     }
 
+
 }
