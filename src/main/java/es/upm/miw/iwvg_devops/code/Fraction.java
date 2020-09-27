@@ -101,4 +101,12 @@ public class Fraction {
                 .reduce(new Fraction(0, 1), (acumulator, element) -> acumulator.add(element));
     }
 
+    public Double findFirstDecimalFractionByUserName(String name){
+        return new UsersDatabase().findAll()
+                .filter(user -> name.equals(user.getName()))
+                .flatMap(user -> user.getFractions().stream())
+                .findFirst()
+                .get().decimal();
+    }
+
 }
