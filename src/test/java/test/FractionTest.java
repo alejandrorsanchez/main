@@ -115,7 +115,7 @@ public class FractionTest {
 
     @Test
     void testFindFirstDecimal() {
-        assertEquals(0, new Fraction().findFirstDecimalFractionByUserName("Antonio"));
+        assertEquals(2, new Fraction().findFirstDecimalFractionByUserName("Ana"));
     }
 
     @Test
