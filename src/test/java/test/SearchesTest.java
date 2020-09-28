@@ -20,7 +20,7 @@ public class SearchesTest {
 
     @Test
     void testFindFirstDecimal() {
-        assertEquals(2, new Searches().findFirstDecimalFractionByUserName("Ana"));
+        assertEquals(0, new Searches().findFirstDecimalFractionByUserName("Antonio"));
     }
 
     @Test
