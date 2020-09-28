@@ -69,8 +69,8 @@ public class FractionTest {
     void testNoProper() {
         Fraction f1 = new Fraction(3, 2);
         Fraction f2 = new Fraction(2, 4);
-        assertTrue(fraction.isNoProper(f1));
-        assertFalse(fraction.isNoProper(f2));
+        assertTrue(f1.isNoProper());
+        assertFalse(f2.isNoProper());
     }
 
     @Test
@@ -106,27 +106,4 @@ public class FractionTest {
         assertEquals(4, f1.divide(f2).getDenominator());
     }
 
-    @Test
-    void testFindFractionAdition() {
-        Fraction f = new Fraction(3, 1);
-        assertEquals(f.getNumerator(), new Fraction().findFractionAdditionByUserId("1").getNumerator());
-        assertEquals(f.getDenominator(), new Fraction().findFractionAdditionByUserId("1").getDenominator());
-    }
-
-    @Test
-    void testFindFirstDecimal() {
-        assertEquals(2, new Fraction().findFirstDecimalFractionByUserName("Ana"));
-    }
-
-    @Test
-    void testFindNegativeFraction() {
-        assertEquals(List.of("Blanco", "López", "Blanco"), new Fraction().findUserFamilyNameByAllNegativeSignFractionDistinct()
-                .collect(Collectors.toList()));
-    }
-
-    @Test
-    void testFindImproperFraction() {
-        assertEquals(List.of("Fernandez", "Blanco", "López", "Blanco", "Torres"), new Fraction().findUserFamilyNameByImproperFraction()
-                .collect(Collectors.toList()));
-    }
 }
