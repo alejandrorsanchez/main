@@ -1,5 +1,7 @@
 package es.upm.miw.iwvg_devops.code;
 
+import java.util.stream.Stream;
+
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
  * <p>
@@ -71,8 +73,8 @@ public class Fraction {
         return (fraction.getNumerator() < fraction.getDenominator());
     }
 
-    public boolean isNoProper(Fraction fraction) {
-        return (fraction.getNumerator() > fraction.getDenominator());
+    public boolean isNoProper() {
+        return (this.getNumerator() > this.getDenominator());
     }
 
     public boolean isEquivalent(Fraction fraction) {
@@ -87,11 +89,15 @@ public class Fraction {
     }
 
     public Fraction multiply(Fraction fraction) {
-        return new Fraction((this.getNumerator()*fraction.getNumerator()),(this.getDenominator()*fraction.getDenominator()));
+        return new Fraction((this.getNumerator() * fraction.getNumerator()), (this.getDenominator() * fraction.getDenominator()));
     }
 
     public Fraction divide(Fraction fraction) {
-        return new Fraction((this.getNumerator()*fraction.getDenominator()),(this.getDenominator()*fraction.getNumerator()));
+        return new Fraction((this.getNumerator() * fraction.getDenominator()), (this.getDenominator() * fraction.getNumerator()));
+    }
+
+    public boolean isNegative() {
+        return (this.getNumerator() < 0 || this.getDenominator() < 0);
     }
 
 }

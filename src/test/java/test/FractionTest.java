@@ -1,15 +1,13 @@
 package test;
 
 import es.upm.miw.iwvg_devops.code.Fraction;
-import es.upm.miw.iwvg_devops.code.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FractionTest {
 
@@ -23,8 +21,8 @@ public class FractionTest {
     @Test
     void testNewFraction() {
         Fraction f1 = new Fraction();
-        assertEquals( 1, f1.getNumerator());
-        assertEquals( 1, f1.getDenominator());
+        assertEquals(1, f1.getNumerator());
+        assertEquals(1, f1.getDenominator());
     }
 
     @Test
@@ -45,6 +43,16 @@ public class FractionTest {
     }
 
     @Test
+    void testToString() {
+        Fraction f1 = new Fraction(2, 3);
+        String message = "Fraction{" +
+                "numerator=" + f1.getNumerator() +
+                ", denominator=" + f1.getDenominator() +
+                '}';
+        assertEquals(f1.toString(), message);
+    }
+
+    @Test
     void testDecimal() {
         assertEquals(0.42857142857142855, fraction.decimal());
     }
@@ -52,20 +60,26 @@ public class FractionTest {
     @Test
     void testProper() {
         Fraction f1 = new Fraction(2, 3);
+        Fraction f2 = new Fraction(3, 2);
         assertTrue(fraction.isProper(f1));
+        assertFalse(fraction.isProper(f2));
     }
 
     @Test
     void testNoProper() {
         Fraction f1 = new Fraction(3, 2);
-        assertTrue(fraction.isNoProper(f1));
+        Fraction f2 = new Fraction(2, 4);
+        assertTrue(f1.isNoProper());
+        assertFalse(f2.isNoProper());
     }
 
     @Test
     void testIsEquivalent() {
         Fraction f1 = new Fraction(1, 2);
         Fraction f2 = new Fraction(2, 4);
+        Fraction f3 = new Fraction(5, 8);
         assertTrue(f1.isEquivalent(f2));
+        assertFalse(f1.isEquivalent(f3));
     }
 
     @Test

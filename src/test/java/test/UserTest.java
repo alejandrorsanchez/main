@@ -29,32 +29,32 @@ class UserTest {
         assertEquals(null, user.getId());
         assertEquals(null, user.getName());
         assertEquals(null, user.getFamilyName());
-        assertEquals( new ArrayList<Fraction>(), user.getFractions());
+        assertEquals(new ArrayList<Fraction>(), user.getFractions());
     }
 
     @Test
     void testUser() {
-        assertEquals( "1", user.getId());
-        assertEquals( "Alejandro", user.getName());
-        assertEquals( "Rodriguez", user.getFamilyName());
-        assertEquals( fractions, user.getFractions());
+        assertEquals("1", user.getId());
+        assertEquals("Alejandro", user.getName());
+        assertEquals("Rodriguez", user.getFamilyName());
+        assertEquals(fractions, user.getFractions());
     }
 
     @Test
     void testAddFraction() {
         Fraction f1 = new Fraction(6, 8);
         user.addFraction(f1);
-        assertEquals( f1, user.getFractions().get(3));
+        assertEquals(f1, user.getFractions().get(3));
     }
 
     @Test
     void testFullName() {
-        assertEquals( "Alejandro Rodriguez", user.fullName());
+        assertEquals("Alejandro Rodriguez", user.fullName());
     }
 
     @Test
     void testInititals() {
-        assertEquals( "A.", user.initials());
+        assertEquals("A.", user.initials());
     }
 
 }
